@@ -1,0 +1,169 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.spin {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 300px;
+  background-color: green;
+  background-image: url(../img/suits.png);
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+
+.spin_show {
+  transition: 2s;
+  transition-timing-function: ease-in-out;
+}
+
+.suit {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+
+.suit_show {
+  opacity: 0.2;
+  transition: opacity 1.5s 0.1s ease;
+}
+
+.backcard1, .backcard2 {
+  position: absolute;
+  top: 65px;
+  height: 116px;
+}
+
+.backcard1-anim {
+  left: 75px;
+  animation-name: moveCB1;
+  margin-left: 299px;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.backcard2-anim {
+  right: 75px;
+  animation-name: moveCB2;
+  margin-right: 300px;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.win-round {
+  animation-name: win;
+  animation-duration: 1s;
+}
+
+.suit_clubs {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/SuitClubs.svg/1000px-SuitClubs.svg.png);
+}
+
+.suit_hearts {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/SuitHearts.svg/1000px-SuitHearts.svg.png);
+}
+
+.suit_diamonds {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/SuitDiamonds.svg/2000px-SuitDiamonds.svg.png);
+}
+
+.suit_spades {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/SuitSpades.svg/2000px-SuitSpades.svg.png);
+}
+
+.player1 {
+  float: left;
+  text-align: center;
+}
+
+.player2 {
+  float: right;
+  text-align: center;
+}
+
+.down-anim {
+  animation-name: down;
+  animation-duration: 1s;
+  margin-top: 249px;
+}
+
+#round-table {
+  width: 240px;
+  margin: 50px auto;
+}
+
+#round-table img {
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+@keyframes moveCB1 {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 300px;
+  }
+}
+
+@keyframes moveCB2 {
+  0% {
+    margin-right: 0px;
+  }
+  100% {
+    margin-right: 299px;
+  }
+}
+
+@keyframes win {
+  0% {
+    box-shadow: 0 0 7px 5px rgba(0, 255, 0, 0.9);
+  }
+  25% {
+    box-shadow: 0 0 2px 5px rgba(0, 255, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 7px 5px rgba(0, 255, 0, 0.9);
+  }
+  75% {
+    box-shadow: 0 0 2px 5px rgba(0, 255, 0, 0.3);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+@keyframes down {
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 250px;
+    opacity: 0;
+  }
+}
